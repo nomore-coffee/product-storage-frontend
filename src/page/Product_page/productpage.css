@@ -35,32 +35,47 @@
     display: grid;
     grid-template-columns: 25% auto;
     gap: 30px;
-    background-color: blue;
+    background-color: whitesmoke;
+    height: 50vh;
   }
 .addButton{
   display: grid;
-  justify-content: end;
+  justify-content: start;
+  padding-left: 12px;
 }
 .formheader{
   display: grid;
   border-bottom: 2px solid grey;
   grid-template-columns: 50% 50%;
   justify-content: left;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .productform{
   display: grid;
-  grid-template-columns: auto;
+  /* grid-template-columns: auto; */
   gap: 20px;
-  align-content: center;
-  justify-content: center;
+  /* align-content: center; */
+  /* justify-content: center; */
 }
-.destable{
+.destable , .formbody{
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 10px;
 }
 .crossButton{
+  display: grid;
+  justify-content: end;
+}
+.submitButton{
+  background-color: blue;
+  border-radius: 10px;
+  height: 30px;
+  color: aliceblue;
+  width: 120px;
+
+  /* height: 30px; */
+}
+.editbtn{
   display: grid;
   justify-content: end;
 }
