@@ -47,10 +47,14 @@ const ProductPage = () => {
     const name = event.target.name;
     const value = event.target.value;
     console.log(name, value);
-    if(inputs.pricePerQuantityGross && inputs.VAT){
-      let totalppqn = Math.round((inputs.pricePerQuantityGross / inputs.VAT ) * 100)
-    setInputs((values) => ({ ...values, ["pricePerQuantityNet"]: totalppqn }));
-
+    if (inputs.pricePerQuantityGross && inputs.VAT) {
+      let totalppqn = Math.round(
+        (inputs.pricePerQuantityGross / inputs.VAT) * 100
+      );
+      setInputs((values) => ({
+        ...values,
+        ["pricePerQuantityNet"]: totalppqn,
+      }));
     }
     setInputs((values) => ({ ...values, [name]: value }));
   };
@@ -80,10 +84,14 @@ const ProductPage = () => {
       <div className="box">
         <div className="header">Product Data</div>
         <div className="col-container">
-          <div className="col1" style={{marginLeft:"50px"}}>
+          <div className="col1" style={{ marginLeft: "50px" }}>
             <div
               className="col1-headers"
-              style={{ fontSize: "50 px", fontWeight:"bolder", padding: "10px" , }}
+              style={{
+                fontSize: "50 px",
+                fontWeight: "bolder",
+                padding: "10px",
+              }}
             >
               Products
             </div>
@@ -106,11 +114,11 @@ const ProductPage = () => {
               <div
                 className="name"
                 style={{
-                  marginTop:"20px",
+                  marginTop: "20px",
                   borderTop: "2px solid black",
                   borderRight: "2px solid black",
                   borderLeft: "2px solid black",
-                  fontWeight:"bolder"
+                  fontWeight: "bolder",
                 }}
               >
                 Product Name
@@ -152,19 +160,25 @@ const ProductPage = () => {
             </div>
 
             <div className="col2-container" style={{ textAlign: "center" }}>
-              
               <div
                 className="descriptionTable"
                 style={{
-                  marginTop:"60px",
+                  marginTop: "60px",
                   padding: "10px",
                   display: "grid",
                   justifyContent: "center",
                 }}
               >
                 <div className="editbtn">
-                  <div style={{border:"2px solid black" , width:"3vw" ,marginBottom:"10px" , backgroundColor:"yellow"}}>
-                  Edit
+                  <div
+                    style={{
+                      border: "2px solid black",
+                      width: "3vw",
+                      marginBottom: "10px",
+                      backgroundColor: "yellow",
+                    }}
+                  >
+                    Edit
                   </div>
                 </div>
                 {Object.entries(activeProduct).map(([key, value]) => (
@@ -209,6 +223,7 @@ const ProductPage = () => {
                 <thead>Vats:</thead>
                 <thead>Price Per Quantity Net:</thead>
                 <thead>Total Stock:</thead>
+                <thead>Upload:</thead>
               </table>
             </div>
             <div className="body2">
@@ -245,7 +260,6 @@ const ProductPage = () => {
                     type="number"
                     placeholder="Price Per Quantity Net"
                     name="pricePerQuantityNet"
-    
                     value={inputs.pricePerQuantityNet}
                     onChange={handleChange}
                     disabled
@@ -257,6 +271,15 @@ const ProductPage = () => {
                     placeholder="Total Stock"
                     name="totalStocks"
                     value={inputs.totalStocks}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label>
+                  <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    value={inputs.image}
                     onChange={handleChange}
                   />
                 </label>
