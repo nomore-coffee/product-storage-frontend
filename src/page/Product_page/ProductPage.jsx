@@ -196,7 +196,7 @@ const ProductPage = () => {
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <div className="formheader">
-            <div className="text">NEW PRODUCT</div>
+            <div className="text newtext">NEW PRODUCT</div>
             <div className="crossButton" onClick={() => handleClose()}>
               <CancelIcon />
             </div>
